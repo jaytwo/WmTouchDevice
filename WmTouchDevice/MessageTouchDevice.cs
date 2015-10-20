@@ -97,7 +97,13 @@ namespace WmTouchDevice
         {
             Point pt = Position;
             if (relativeTo != null)
-                pt = this.ActiveSource.RootVisual.TransformToDescendant((Visual)relativeTo).Transform(Position);
+            {
+                var rootVisual = this.ActiveSource.RootVisual;
+                var relativeVisual = (Visual)relativeTo;
+
+                if (rootVisual.IsAncestorOf(relativeVisual))
+                    pt = rootVisual.TransformToDescendant(relativeVisual).Transform(Position);
+            }
 
             var rect = new Rect(pt, new Size(1.0, 1.0));
             return new TouchPoint(this, pt, rect, TouchAction.Move);
