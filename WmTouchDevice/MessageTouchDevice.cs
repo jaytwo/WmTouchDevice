@@ -68,7 +68,7 @@ namespace WmTouchDevice
                             device.Deactivate();
                             _devices.Remove(input.dwID);
                         }
-                        else if (device.IsActive && input.dwFlags.HasFlag(TOUCHEVENTF.TOUCHEVENTF_MOVE))
+                        else if (device.IsActive && input.dwFlags.HasFlag(TOUCHEVENTF.TOUCHEVENTF_MOVE) && device.Position != position)
                         {
                             device.Position = position;
                             device.ReportMove();
