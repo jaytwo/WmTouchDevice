@@ -4,7 +4,7 @@ WmTouchDevice contains a basic implementation of WPF's TouchDevice class based o
 
 This is primarily intended to work around the [WPF Touch Event Fires with Delay](https://connect.microsoft.com/VisualStudio/feedback/details/782456/wpf-touch-event-fires-with-delay) bug in WPF, particularly severe with multi-touch.  However, this libary can be useful to enable other functions that require WM_TOUCH such as App-style focus tracking in Windows 8.
 
-More information on this issue and solution is posted [here](http://jayheu.lingohq.io/blog/archives/2015/07/25/multi-touch-and-wpf).
+More information on this issue and solution is posted [here](https://jaytwo.github.io/2015/07/25/multi-touch-and-wpf.html).
 
 ### Usage
 
